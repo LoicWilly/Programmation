@@ -16,13 +16,13 @@ void combinaison(int id, char alpha[], int alphaLenght, combinationT * combi)
   int maxId = 0;
   int arrayIdAlpha[8] = {0,0,0,0,0,0,0,0};
   int p = 7;
-  double pId = pow(alphaLenght,p);
+  double power = pow(alphaLenght,p);
   while(tmpId != 0)
   {
-    if(tmpId >= pId)
+    if(tmpId >= power)
     {
-        tmpId -= pId;
-        if(id >= 2*pId || p == 0)
+        tmpId -= power;
+        if(id >= 2*power || p == 0)
         {
         arrayIdAlpha[p]++;
         }
@@ -31,7 +31,7 @@ void combinaison(int id, char alpha[], int alphaLenght, combinationT * combi)
     else
     {
      p--;
-     pId = pow(alphaLenght,p);
+     power = pow(alphaLenght,p);
     }
   }
 
