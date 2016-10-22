@@ -10,13 +10,14 @@ typedef struct combinationST{
   char word[9];
 } combinationT;
 
-void combinaison(int id, char alpha[], int alphaLenght, combinationT * combi)
+void combinaison(double id, char alpha[], int alphaLenght, combinationT * combi)
 {
-  int tmpId = id;
+  double tmpId = id;
   int maxId = 0;
   int arrayIdAlpha[8] = {0,0,0,0,0,0,0,0};
   int p = 7;
   double power = pow(alphaLenght,p);
+  printf("%f\n", power);
   while(tmpId != 0)
   {
     if(tmpId >= power)
@@ -32,6 +33,7 @@ void combinaison(int id, char alpha[], int alphaLenght, combinationT * combi)
     {
      p--;
      power = pow(alphaLenght,p);
+     printf("%f\n", power);
     }
   }
 
@@ -52,7 +54,9 @@ int main(int argc, char *argv[]) {
   "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   "0123456789"
   "*~!";
-  combinaison(atoi(argv[1]), alphabet, 65, &cmb);
+  double idArg;
+  sscanf(argv[1], "%lf", &idArg);
+  combinaison(idArg, alphabet, 65, &cmb);
 
 
   return 0;
