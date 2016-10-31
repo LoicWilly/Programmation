@@ -1,4 +1,4 @@
-PARAM=-std=c99 -Wall -lpthread -lm
+PARAM=-std=c99 -Wall -lpthread -lcrypt
 passwordCracker: passwordCracker.o  crack.o
 	gcc passwordCracker.o crack.o -o passwordCracker $(PARAM)
 passwordCracker.o: passwordCracker.c

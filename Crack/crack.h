@@ -1,11 +1,22 @@
 #ifndef CRACK_H_INCLUDED
 #define CRACK_H_INCLUDED
+#include <stdbool.h>
 
-typedef struct combinationST{
-  int length;
+
+typedef struct combiThreadST
+{
+  int idThread;
+  int nbThreads;
+  char * cryptedPassword;
+  char salt[3];
+
   char word[9];
-} combinationT;
+  char * alpha;
+  int alphaLength;
+} combiThreadT;
 
-void combinaison(double id, char alpha[], int alphaLenght, combinationT * combi);
+
+void combination(double id, combiThreadT * combi);
+bool testCombination(double idStart, double nbCombinations, int jump, combiThreadT * combi);
 
 #endif // CRACK_H_INCLUDED
